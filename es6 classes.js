@@ -12,6 +12,7 @@ class PersonCl {
     this.birthYear = birthYear;
   }
 
+  // **Instance methods
   //  ** Methods will be added to .prototype property
   calcAge() {
     console.log(2037 - this.birthYear);
@@ -33,6 +34,12 @@ class PersonCl {
   get fullName() {
     return this._fullName;
   }
+
+  // static method
+  static hey() {
+    console.log('Hey there');
+    console.log(this);
+  }
 }
 
 const zoro = new PersonCl('Zoro Roronoa', 1999);
@@ -48,6 +55,7 @@ console.log(zoro.__proto__ === PersonCl.prototype);
 
 zoro.greet();
 
+PersonCl.hey();
 // ** IMPORTANT
 // 1) Classes are not hoisted(using them before they are declared)
 // 2) Classes are also first-class citizens. It means we can pass them into functions and return them from functions
