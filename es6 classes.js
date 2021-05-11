@@ -7,8 +7,8 @@
 
 // ** Class declaration
 class PersonCl {
-  constructor(firstName, birthYear) {
-    this.firstName = firstName;
+  constructor(fullName, birthYear) {
+    this.fullName = fullName;
     this.birthYear = birthYear;
   }
 
@@ -19,11 +19,26 @@ class PersonCl {
   greet() {
     console.log(`Hey ${this.firstName}`);
   }
+
+  get age() {
+    return 2037 - this.birthYear;
+  }
+
+  // Set a property that already exists
+  set fullName(name) {
+    if (name.includes(' ')) this._fullName = name;
+    else alert(`${name} is not a full name`);
+  }
+
+  get fullName() {
+    return this._fullName;
+  }
 }
 
-const zoro = new PersonCl('Zoro', 1999);
+const zoro = new PersonCl('Zoro Roronoa', 1999);
 console.log(zoro);
 zoro.calcAge();
+console.log(zoro.age);
 
 console.log(zoro.__proto__ === PersonCl.prototype);
 
