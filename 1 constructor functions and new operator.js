@@ -42,3 +42,10 @@ const s = 'S';
 
 console.log(nelson instanceof Person);
 console.log(s instanceof Person);
+
+// static method
+Person.hey = function () {
+  console.log(`Hey there 😎😎`);
+};
+
+Person.hey();
