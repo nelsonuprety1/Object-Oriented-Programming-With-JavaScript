@@ -29,7 +29,7 @@ console.log(nelson);
 // all of this happens because we are calling the function with the new operator here.
 //  1. New {} object is created
 // 2. function is called, and the this keyword is the newly created object. this = {}
-// 3. {} linked to prototype
+// 3. {} linked (__proto__ property) to prototype
 // 4. function automatically returns that empty object from the beginning {}. But
 // actually at this point the object no longer needs to be empty. And this is actually  the
 // trick to make the constructor function work
